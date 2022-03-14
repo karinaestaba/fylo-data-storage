@@ -30,11 +30,10 @@ body
   grid-template-rows: 1fr auto
   grid-template-columns: 1fr
 
-  background-image: url("../img/bg-desktop.png")
+  background-image: url("../img/bg-mobile.png")
   background-repeat: no-repeat
   background-attachment: fixed
-  background-position: bottom -7vh right 0
-  background-size: contain
+  background-size: cover
 
 body,
 input,
@@ -52,15 +51,14 @@ p
     width: 100%
     max-width: 1220px
     grid-area: c-main
-    padding: 50px 30px
+    padding: 10px 30px
 
     display: grid
     justify-content: center
     align-items: baseline
-    grid-template-areas: ". c-menu c-resume ."
-    gap: 30px
-
-    grid-template-columns: .5fr 2fr 3fr .5fr
+    grid-template-areas: "c-menu" "c-resume"
+    gap: 15px
+    grid-template-columns: 1fr
     grid-template-rows: 1fr
     margin: 0 auto
 
@@ -85,35 +83,21 @@ p
         text-align: center
         border-radius: 12px
         position: absolute
-        right: 32px
-        top: -50px
+        left: 50%
+        margin-left: -89.5px
 
         display: flex
         align-items: center
         justify-content: space-evenly
 
         animation: alertAnimation 1s ease 0s 1 normal forwards
-
-        &::after
-         content: ""
-         width: 0
-         height: 0
-         border-left: 20px solid transparent
-         border-right: 13px solid transparent
-         border-top: 39px solid white
-         position: absolute
-         top: 78%
-         right: -4%
-         -webkit-transform: rotate
-         transform: rotate
-         -webkit-transform: rotate(333deg)
-         transform: rotate(342deg)
+        bottom: -47px
 
         .alert
           &-quantity
             font-weight: 700
             font-size: 38px
-            color: $dark_blue
+            color: $very_dark_blue
 
           &-info
             font-weight: 700
@@ -127,7 +111,7 @@ p
     flex-direction: column
     gap: 33px
     background: $dark_blue
-    padding: 31px 45px 45px 50px
+    padding: 50px 45px 45px 50px
     border-radius: 12px
     border-top-right-radius: 91px
 
@@ -192,6 +176,7 @@ p
     color: $pale_blue
     font-size: 14px
     line-height: 17px
+    text-align: center
 
   &-input
     grid-column: 1/13
@@ -267,8 +252,44 @@ p
     opacity: 1
     transform: scale(1)
 
-// @media (min-width: 992px)
+@media (min-width: 778px)
+  body
+    background-image: url("../img/bg-desktop.png")
+    background-position: bottom -7vh right 0
+    background-size: contain
 
+  .main
+    &-container
+      padding: 50px 30px
+      grid-template-areas: ". c-menu c-resume ."
+      grid-template-columns: .5fr 2fr 3fr .5fr
+      gap: 30px
 
-// @media (min-width: 1220px)
+      .resume
+        &-alert
+          left: initial
+          bottom: initial
+          right: 32px
+          top: -50px
 
+          &::after
+            content: ""
+            width: 0
+            height: 0
+            border-left: 20px solid transparent
+            border-right: 13px solid transparent
+            border-top: 39px solid white
+            position: absolute
+            top: 78%
+            right: -4%
+            -webkit-transform: rotate
+            transform: rotate
+            -webkit-transform: rotate(333deg)
+            transform: rotate(342deg)
+
+    &-nav
+      padding-top: 37px
+
+  .progress
+    &-label
+      text-align: left
