@@ -30,7 +30,7 @@ body
   grid-template-rows: 1fr auto
   grid-template-columns: 1fr
 
-  background-image: url("../img/bg-mobile.png")
+  background-image: url("../images/bg-mobile.png")
   background-repeat: no-repeat
   background-attachment: fixed
   background-size: cover
@@ -141,7 +141,7 @@ p
   &-footer
     grid-area: foot
     min-height: 65px
-    color: $very_dark_blue
+    color:$grayish_blue
     text-align: center
     font-size: 12px
     line-height: 1.1
@@ -150,12 +150,14 @@ p
     align-content: center
     align-items: center
     grid-area: c-footer
+    flex-wrap: wrap
 
     a
       display: inline-block
       margin-left: 2px
-      color: $very_dark_blue
+      color: $pale_blue
       text-decoration: none
+      white-space: nowrap
 
 .progress
   &-container
@@ -254,7 +256,7 @@ p
 
 @media (min-width: 778px)
   body
-    background-image: url("../img/bg-desktop.png")
+    background-image: url("../images/bg-desktop.png")
     background-position: bottom -7vh right 0
     background-size: contain
 
